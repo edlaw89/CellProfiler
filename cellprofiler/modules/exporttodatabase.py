@@ -3911,7 +3911,7 @@ OPTIONALLY ENCLOSED BY '"' ESCAPED BY '\\\\';
 # ==============================================
 
 # ==== Database Info ====
-%(db_info)s
+
 
 # ==== Database Tables ====
 image_table   = %(spot_tables)s
