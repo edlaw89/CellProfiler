@@ -112,7 +112,7 @@ logger = logging.getLogger(__name__)
 try:
     import MySQLdb
     from MySQLdb.cursors import SSCursor
-#    import sqlite3
+    import sqlite3
 
     HAS_MYSQL_DB = True
 except Exception:
@@ -143,7 +143,7 @@ C_THUMBNAIL = "Thumbnail"
 ##############################################
 DB_MYSQL = "MySQL"
 DB_ORACLE = "Oracle"
-#DB_SQLITE = "SQLite"
+DB_SQLITE = "SQLite"
 DB_MYSQL_CSV = "MySQL / CSV"
 
 ##############################################
@@ -322,12 +322,12 @@ def connect_mysql(host, user, pw, db):
     return connection, cursor
 
 
-#def connect_sqlite(db_file):
- #   '''Creates and returns a db connection and cursor.'''
-  #  import sqlite3
-  #  connection = sqlite3.connect(db_file, timeout=30)
-  #  cursor = connection.cursor()
-   # return connection, cursor
+def connect_sqlite(db_file):
+    '''Creates and returns a db connection and cursor.'''
+    import sqlite3
+    connection = sqlite3.connect(db_file, timeout=30)
+    cursor = connection.cursor()
+    return connection, cursor
 
 
 class DBContext(object):
