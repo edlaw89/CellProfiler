@@ -305,7 +305,7 @@ def get_next_result(cursor):
 
 def connect_mysql(host, user, pw, db):
     '''Creates and returns a db connection and cursor.'''
-    connection = MySQLdb.connect(host=host, user=user, passwd=pw, db=db)
+    connection = MySQLdb.connect(host=host, user=user, passwd=pw, db=db, use_pure=TRUE)
     cursor = SSCursor(connection)
 
     rv = cursor.execute('SET TRANSACTION ISOLATION LEVEL READ COMMITTED')
